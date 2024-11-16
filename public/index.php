@@ -5,13 +5,14 @@ $not = 0 ;
 $path = trim(str_replace("/mame/daneshjoyar", "", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)), "/");
 // for deploy
 // $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) , "/");
-// echo $_SERVER['REQUEST_URI'] ; 
 $rots = 
 [
     'GET' =>[
         
         "" => ['controller'=> 'app\C\indexpaga'  , 'method' => 'index'] , 
         "index" => ['controller'=> 'app\C\indexpaga'  , 'method' => 'index'] , 
+        "page" => ['controller'=> 'app\C\page'  , 'method' => 'index'] , 
+        "login" => ['controller'=> 'app\C\login'  , 'method' => 'index'] , 
     ] , 
 ] ;  
 $method = $_SERVER['REQUEST_METHOD'];
