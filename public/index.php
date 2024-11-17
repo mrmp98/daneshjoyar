@@ -1,5 +1,10 @@
 <?php 
 require __DIR__ . '/../botstrap.php' ; 
+use app\M\data ; 
+$r = new data()  ; 
+
+
+exit ; 
 $not = 0 ; 
 // for develop localhost
 $path = trim(str_replace("/mame/daneshjoyar", "", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)), "/");

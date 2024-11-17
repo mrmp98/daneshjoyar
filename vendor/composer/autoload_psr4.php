@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'app\\' => array($baseDir . '/app'),
+    'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker', $vendorDir . '/fzaninotto/faker/src/Faker'),
 );
