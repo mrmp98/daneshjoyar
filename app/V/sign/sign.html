@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به حساب کاربری</title>
+    <link rel="stylesheet" href="wive/style.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" action="login.php" method="POST">
+            <h2>ورود به حساب کاربری</h2>
+            <div class="form-group">
+                <label for="email">ایمیل</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">رمز عبور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">ورود</button>
+            <p class="message">هنوز حساب کاربری ندارید؟ <a href="signup.html">ثبت نام کنید</a></p>
+        </form>
+    </div>
+</body>
+</html>

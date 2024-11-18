@@ -5,75 +5,92 @@ use PDO  ;
 class data 
 {
     
-public function inseret() 
+public function inseret($tableName  , $post , $titel) 
 {
     
-        $conn = new PDO("mysql:host=;dbname=", $username, $password);
+        $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-            $sql = "INSERT INTO $tableName (esm, famil, rms) VALUES (:name, :email, :password)";
+            $sql = "INSERT INTO $tableName (post, titel) VALUES (:post, :titel)";
             $stmt = $conn->prepare($sql);
-            $name = "aref jami";
-            $stmt->bindParam(':name', $name);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':password', $password);
-    
+            $stmt->bindParam(':post', $post);
+            $stmt->bindParam(':titel', $titel);
             if ($stmt->execute()) {
-                echo "اطلاعات با موفقیت وارد شد.";
-            } else {
-                echo "خطا در وارد کردن اطلاعات: " . $stmt->errorInfo();
-            }
+              
+            } 
         }
-       public function delet()
+       public function delet($tableName , $id)
        {
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=aref", $username, $password);
+            $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-            $tableName = "aref";
-            $idToDelete = 3; // شناسه رکوردی که می‌خواهید حذف شود
-        
+          
         
             // اجرای استعلام DELETE
             $sql = "DELETE FROM $tableName WHERE id = :id";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':id', $idToDelete);
+            $stmt->bindParam(':id', $id);
         
             if ($stmt->execute()) {
-                echo "رکورد با موفقیت حذف شد.";
-            } else {
-                echo "خطا در حذف رکورد: " . $stmt->errorInfo();
+              
             }
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
        }
 
-       public function serech()
+       public function serech($tableName , $serech , $value)
        {
-
+        try {
+            // اتصال به پایگاه داده
+            $conn = new PDO("mysql:host=localhost;dbname=khabary", 'root', '');
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              
+            // مقداردهی به متغیر جستجو
+            
+            // استعلام برای بررسی وجود مقدار x در دیتابیس
+            $sql = "SELECT COUNT(*) AS count FROM $tableName WHERE $serech = :x";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':x', $value);
+            $stmt->execute();
+            
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // استفاده از $serech به جای $x
+            if ($row['count'] > 0) {
+                return 1 ; 
+            } else {
+              return 0  ; 
+            }
+        } catch(PDOException $e) {
+            echo "خطا در اتصال به دیتابیس: " . $e->getMessage();
+        }
+        
+        $conn = null;
+       }
+       public function update($tableName, $updateColumn, $updateValue, $conditionColumn, $conditionValue)
+       {
            try {
-               $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+               // اتصال به پایگاه داده
+               $conn = new PDO("mysql:host=localhost;dbname=khabary", 'root', '');
                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           
-               // استعلام برای بررسی وجود مقدار x در دیتابیس
-               $sql = "SELECT COUNT(*) AS count FROM table_name WHERE column_name = :x";
+       
+               // استعلام برای به‌روزرسانی مقدار
+               $sql = "UPDATE $tableName SET $updateColumn = :updateValue WHERE $conditionColumn = :conditionValue";
                $stmt = $conn->prepare($sql);
-               $stmt->bindParam(':x', $x);
-               $stmt->execute();
                
-               $row = $stmt->fetch(PDO::FETCH_ASSOC);
-           
-               if ($row['count'] > 0) {
-                   echo "مقدار $x در دیتابیس وجود دارد.";
-               } else {
-                   echo "مقدار $x در دیتابیس یافت نشد.";
+               // باند کردن پارامترها
+               $stmt->bindParam(':updateValue', $updateValue);
+               $stmt->bindParam(':conditionValue', $conditionValue);
+               
+               // اجرای دستور
+               if ($stmt->execute()) {
                }
            } catch(PDOException $e) {
-               echo "خطا در اتصال به دیتابیس: " . $e->getMessage();
+               return "خطا در اتصال به دیتابیس: " . $e->getMessage();
+           } finally {
+               $conn = null; // اطمینان از بستن اتصال به پایگاه داده
            }
-           
-           $conn = null;
        }
 }
 
