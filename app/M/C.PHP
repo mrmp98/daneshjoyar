@@ -32,5 +32,4 @@ try {
 } catch (\PDOException $e) {
     // در صورت بروز خطا، پیام خطا را نمایش می‌دهد
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
-    exit ; 
 }

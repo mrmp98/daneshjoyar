@@ -12,9 +12,12 @@ $rots =
         "" => ['controller'=> 'app\C\indexpaga'  , 'method' => 'index'] , 
         "index" => ['controller'=> 'app\C\indexpaga'  , 'method' => 'index'] , 
         "page" => ['controller'=> 'app\C\page'  , 'method' => 'index'] , 
-        "sign" => ['controller'=> 'app\C\sign'  , 'method' => 'index'] , 
-        "signup" => ['controller'=> 'app\C\sign'  , 'method' => 'index'] , 
+        "signin" => ['controller'=> 'app\C\sign'  , 'method' => 'index'] , 
+        "signup" => ['controller'=> 'app\C\signup'  , 'method' => 'index'] , 
     ] , 
+    'POST' => [
+        'signin' => ['controller'=> 'app\C\sign'  , 'method' => 'c']
+    ]
 ] ;  
 $method = $_SERVER['REQUEST_METHOD'];
 
