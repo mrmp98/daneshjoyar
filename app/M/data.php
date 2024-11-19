@@ -1,5 +1,6 @@
 <?php 
 namespace App\M;
+require_once __DIR__ . 'config.php' ; 
 use PDOException  ;
 use PDO  ;  
 class data 
@@ -8,7 +9,7 @@ class data
 public function inseret($tableName  , $post , $titel) 
 {
     
-        $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
+        $conn = new PDO("mysql:host=host;dbname=dbname", usename, password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
             $sql = "INSERT INTO $tableName (post, titel) VALUES (:post, :titel)";
@@ -22,7 +23,7 @@ public function inseret($tableName  , $post , $titel)
        public function delet($tableName , $id)
        {
         try {
-            $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
+            $conn = new PDO("mysql:host=host;dbname=dbname", usename, password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
         
@@ -43,7 +44,7 @@ public function inseret($tableName  , $post , $titel)
        {
         try {
             // اتصال به پایگاه داده
-            $conn = new PDO("mysql:host=localhost;dbname=khabary", 'root', '');
+            $conn = new PDO("mysql:host=host;dbname=dbname", usename, password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               
             // مقداردهی به متغیر جستجو
@@ -72,7 +73,7 @@ public function inseret($tableName  , $post , $titel)
        {
            try {
                // اتصال به پایگاه داده
-               $conn = new PDO("mysql:host=localhost;dbname=khabary", 'root', '');
+               $conn = new PDO("mysql:host=host;dbname=dbname", usename, password);
                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
                // استعلام برای به‌روزرسانی مقدار
@@ -93,7 +94,4 @@ public function inseret($tableName  , $post , $titel)
            }
        }
 }
-
-
-
-
+ 
