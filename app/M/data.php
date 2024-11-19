@@ -1,49 +1,49 @@
 <?php 
-namespace App\M;
-require_once __DIR__ . 'config.php' ; 
+namespace app\M;
 use PDOException  ;
 use PDO  ;  
+require_once __DIR__ . '/Config.php'; 
+
 class data 
 {
-    
-public function inseret($tableName  , $post , $titel , $r , $t = null  ) 
-{
-    
-
-    if($r == 2){
-
-
-        $conn = new PDO("mysql:host=host;dbname=dbname", "usename", "password");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+    public function inseret($tableName, $post, $titel, $r, $t = null) 
+    {
+        if ($r == 2) {
+            // استفاده از مقادیر تعریف شده به جای نام متغیرها
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
             $sql = "INSERT INTO $tableName (post, titel) VALUES (:post, :titel)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':post', $post);
             $stmt->bindParam(':titel', $titel);
             if ($stmt->execute()) {
-              
+                // موفقیت در اجرای دستور
             }
-        return ; 
+            return; 
         }
-            if($r == 3 ){
-                $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-                    $sql = "INSERT INTO $tableName (user,password , email) VALUES (:user,:password ,:email)";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bindParam(':user', $post);
-                    $stmt->bindParam(':password', $titel);
-                    $stmt->bindParam(':email', $t);
-                    if ($stmt->execute()) {
-                      
-                    }
-                    return   ;    
+        
+        if ($r == 3) {
+            // استفاده از مقادیر تعریف شده به جای نام متغیرها
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+            $sql = "INSERT INTO $tableName (user, password, email) VALUES (:user, :password, :email)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':user', $post);
+            $stmt->bindParam(':password', $titel);
+            $stmt->bindParam(':email', $t);
+            if ($stmt->execute()) {
+                // موفقیت در اجرای دستور
             }
+            return;    
         }
+    }
+
        public function delet($tableName , $id)
        {
         try {
-            $conn = new PDO("mysql:host=host;dbname=dbname", "usename", "password");
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
         
@@ -64,7 +64,7 @@ public function inseret($tableName  , $post , $titel , $r , $t = null  )
        {
         try {
             // اتصال به پایگاه داده
-            $conn = new PDO("mysql:host=host;dbname=dbname", "usename", "password");
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               
             // مقداردهی به متغیر جستجو
@@ -93,7 +93,7 @@ public function inseret($tableName  , $post , $titel , $r , $t = null  )
        {
            try {
                // اتصال به پایگاه داده
-               $conn = new PDO("mysql:host=host;dbname=dbname", "usename", "password");
+               $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
                // استعلام برای به‌روزرسانی مقدار

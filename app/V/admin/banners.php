@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
 <title>قالب پنل مدیریت |نت کپی</title>    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive_991.css" media="(max-width:991px)">
-    <link rel="stylesheet" href="css/responsive_768.css" media="(max-width:768px)">
-    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="wive/index/css/responsive_991.css" media="(max-width:991px)">
+    <link rel="stylesheet" href="wive/index/css/responsive_768.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="wive/index/css/font.css">
 </head>
 <body>
 <div class="sidebar__nav border-top border-left  ">
@@ -26,8 +26,8 @@
         <li class="item-li i-courses"><a href="courses.html">دوره ها</a></li>
         <li class="item-li i-users "><a href="users.html"> کاربران</a></li>
         <li class="item-li i-categories"><a href="categories.html">دسته بندی ها</a></li>
-        <li class="item-li i-slideshow is-active"><a href="slideshow.html">اسلایدشو</a></li>
-        <li class="item-li i-banners"><a href="banners.html">بنر ها</a></li>
+        <li class="item-li i-slideshow "><a href="slideshow.html">اسلایدشو</a></li>
+        <li class="item-li i-banners is-active"><a href="banners.html">بنر ها</a></li>
         <li class="item-li i-articles"><a href="articles.html">مقالات</a></li>
         <li class="item-li i-ads"><a href="ads.html">تبلیغات</a></li>
         <li class="item-li i-comments"><a href="comments.html"> نظرات</a></li>
@@ -66,14 +66,14 @@
     <div class="breadcrumb">
         <ul>
             <li><a href="index.html">پیشخوان</a></li>
-            <li><a href="slideshow.html" class="is-active">اسلایدشو</a></li>
+            <li><a href="banners.html.html" class="is-active">بنر ها</a></li>
         </ul>
     </div>
     <div class="main-content font-size-13">
         <div class="tab__box">
             <div class="tab__items">
-                <a class="tab__item is-active" href="slideshow.html">لیست اسلاید ها</a>
-                <a class="tab__item " href="create-slideshow.html">ایجاد اسلاید جدید</a>
+                <a class="tab__item is-active" href="banners.html">لیست بنر ها ها</a>
+                <a class="tab__item " href="create-banner.html">ایجاد بنر جدید</a>
 
             </div>
         </div>
@@ -144,6 +144,6 @@
     </div>
 </div>
 </body>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/js.js"></script>
+<script src="wive/index/js/jquery-3.4.1.min.js"></script>
+<script src="wive/index/js/js.js"></script>
 </html>

@@ -14,6 +14,11 @@ $rots =
         "page" => ['controller'=> 'app\C\page'  , 'method' => 'index'] , 
         "signin" => ['controller'=> 'app\C\sign'  , 'method' => 'index'] , 
         "signup" => ['controller'=> 'app\C\signup'  , 'method' => 'index'] , 
+        "articles" => ['controller'=> 'app\C\admin'  , 'method' => 'articles'] , 
+        "banners" => ['controller'=> 'app\C\admin'  , 'method' => 'banners'] , 
+        "categories" => ['controller'=> 'app\C\admin'  , 'method' => 'categories'] , 
+        "slideshow" => ['controller'=> 'app\C\admin'  , 'method' => 'slideshow'] , 
+        "users" => ['controller'=> 'app\C\admin'  , 'method' => 'users'] , 
     ] , 
     'POST' => [
         'signin' => ['controller'=> 'app\C\sign'  , 'method' => 'c'] , 

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
 <title>قالب پنل مدیریت |نت کپی</title>    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive_991.css" media="(max-width:991px)">
-    <link rel="stylesheet" href="css/responsive_768.css" media="(max-width:768px)">
-    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="wive/index/css/responsive_991.css" media="(max-width:991px)">
+    <link rel="stylesheet" href="wive/index/css/responsive_768.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="wive/index/css/font.css">
 </head>
 <body>
 <div class="sidebar__nav border-top border-left  ">
@@ -115,13 +115,9 @@
             <div class="col-4 bg-white">
                   <p class="box__title">ایجاد دسته بندی جدید</p>
                   <form action="" method="post" class="padding-30">
-                      <input type="text" placeholder="نام دسته بندی" class="text">
-                      <input type="text" placeholder="نام انگلیسی دسته بندی" class="text">
-                      <p class="box__title margin-bottom-15">انتخاب دسته پدر</p>
-                      <select name="" id="">
-                          <option value="0">ندارد</option>
-                          <option value="0">برنامه نویسی</option>
-                      </select>
+                      <input type="text" placeholder="titel" class="text">
+                      <input type="text" placeholder="متن خبر " class="text">
+                      
                       <button class="btn btn-netcopy_net">اضافه کردن</button>
                   </form>
             </div>
@@ -129,7 +125,7 @@
     </div>
 </div>
 </body>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/js.js"></script>
-<script src="js/tagsInput.js"></script>
+<script src="wive/index/js/jquery-3.4.1.min.js"></script>
+<script src="wive/index/js/js.js"></script>
+<script src="wive/index/js/tagsInput.js"></script>
 </html>

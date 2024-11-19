@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
 <title>قالب پنل مدیریت |نت کپی</title>    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive_991.css" media="(max-width:991px)">
-    <link rel="stylesheet" href="css/responsive_768.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="wive/index/css/responsive_991.css" media="(max-width:991px)">
+    <link rel="stylesheet" href="wive/index/css/responsive_768.css" media="(max-width:768px)">
     <link rel="stylesheet" href="css/font.css">
 </head>
 <body>
@@ -23,14 +23,14 @@
 
     <ul>
         <li class="item-li i-dashboard "><a href="index.html">داشبورد</a></li>
-        <li class="item-li i-courses "><a href="courses.html">دوره ها</a></li>
-        <li class="item-li i-users"><a href="users.html"> کاربران</a></li>
+        <li class="item-li i-courses"><a href="courses.html">دوره ها</a></li>
+        <li class="item-li i-users is-active"><a href="users.html"> کاربران</a></li>
         <li class="item-li i-categories"><a href="categories.html">دسته بندی ها</a></li>
         <li class="item-li i-slideshow"><a href="slideshow.html">اسلایدشو</a></li>
         <li class="item-li i-banners"><a href="banners.html">بنر ها</a></li>
-        <li class="item-li i-articles "><a href="articles.html">مقالات</a></li>
-        <li class="item-li i-ads "><a href="ads.html">تبلیغات</a></li>
-        <li class="item-li i-comments is-active"><a href="comments.html"> نظرات</a></li>
+        <li class="item-li i-articles"><a href="articles.html">مقالات</a></li>
+        <li class="item-li i-ads"><a href="ads.html">تبلیغات</a></li>
+        <li class="item-li i-comments"><a href="comments.html"> نظرات</a></li>
         <li class="item-li i-tickets"><a href="tickets.html"> تیکت ها</a></li>
         <li class="item-li i-discounts"><a href="discounts.html">تخفیف ها</a></li>
         <li class="item-li i-transactions"><a href="transactions.html">تراکنش ها</a></li>
@@ -65,88 +65,52 @@
     </div>
     <div class="breadcrumb">
         <ul>
-            <li><a href="index.html">پیشخوان</a></li>
-            <li><a href="comments.html" class="is-active"> نظرات</a></li>
+            <li><a href="index.html" >پیشخوان</a></li>
+            <li><a href="courses.html" class="is-active">کاربران</a></li>
         </ul>
     </div>
-    <div class="main-content">
-        <div class="tab__box">
-            <div class="tab__items">
-                <a class="tab__item is-active" href="comments.html"> همه نظرات</a>
-                <a class="tab__item " href="comments.html">نظرات تاییده نشده</a>
-                <a class="tab__item " href="comments.html">نظرات تاییده شده</a>
-            </div>
-        </div>
-        <div class="bg-white padding-20">
+    <div class="main-content font-size-13">
+        
+        <div class="d-flex flex-space-between item-center flex-wrap padding-30 border-radius-3 bg-white">
             <div class="t-header-search">
                 <form action="" onclick="event.preventDefault();">
                     <div class="t-header-searchbox font-size-13">
-                        <input type="text" class="text search-input__box font-size-13" placeholder="جستجوی در نظرات">
                         <div class="t-header-search-content ">
-                            <input type="text"  class="text"  placeholder="قسمتی از متن">
                             <input type="text"  class="text"  placeholder="ایمیل">
-                            <input type="text"  class="text margin-bottom-20"  placeholder="نام و نام خانوادگی">
+                    
+                            <input type="text"  class="text margin-bottom-20" placeholder="نام و نام خانوادگی">
                             <btutton class="btn btn-netcopy_net">جستجو</btutton>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-
         <div class="table__box">
             <table class="table">
                 <thead role="rowgroup">
                 <tr role="row" class="title-row">
                     <th>شناسه</th>
-                    <th>ارسال کننده</th>
-                    <th>برای</th>
-                    <th>دیدگاه</th>
-                    <th>تاریخ</th>
-                    <th>تعداد پاسخ ها</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
+                    <th>نام و نام خانوادگی</th>
+                    <th>ایمیل</th>
+                    <th>سطح کاربری</th>
+                    <th>تاریخ عضویت</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr role="row" >
+                <tr role="row" class="">
                     <td><a href="">1</a></td>
                     <td><a href="">نت کپی</a></td>
-                    <td><a href="">دوره لاراول</a></td>
-                    <td>دوره خوبی بود</td>
-                    <td>1399/05/01</td>
-                    <td>13</td>
-                    <td class="text-success">تاییده شده</td>
-                    <td>
-                        <a href="" class="item-delete mlg-15" title="حذف"></a>
-                        <a href="show-comment.html"  class="item-reject mlg-15" title="رد"></a>
-                        <a href="show-comment.html" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                        <a href="show-comment.html"  class="item-confirm mlg-15" title="تایید"></a>
-                        <a href="edit-comment.html" class="item-edit " title="ویرایش"></a>
-                    </td>
+                    <td>programming@gmail.com</td>
+                    <td>کاربر عادی</td>
+                    <td>1399/11/11</td>
                 </tr>
-                <tr role="row">
-                    <td><a href="">1</a></td>
-                    <td><a href="">نت کپی</a></td>
-                    <td><a href="">دوره لاراول</a></td>
-                    <td>دوره خوبی بود</td>
-                    <td>1399/05/01</td>
-                    <td>13</td>
-                    <td class="text-error">تاییده نشده</td>
-                    <td>
-                        <a href="" class="item-delete mlg-15" title="حذف"></a>
-                        <a href="show-comment.html"  class="item-reject mlg-15" title="رد"></a>
-                        <a href="show-comment.html" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                        <a href="show-comment.html"  class="item-confirm mlg-15" title="تایید"></a>
-                        <a href="edit-comment.html" class="item-edit " title="ویرایش"></a>
-                    </td>
-                </tr>
-
+                
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 </body>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/js.js"></script>
+<script src="wive/index/js/jquery-3.4.1.min.js"></script>
+<script src="wive/index/js/js.js"></script>
 </html>
