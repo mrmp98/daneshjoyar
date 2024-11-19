@@ -28,6 +28,15 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
 
     $pdo->exec($sql);
+    $sql = "CREATE TABLE IF NOT EXISTS user (
+        id INT(11) AUTO_INCREMENT PRIMARY KEY,
+        user     LONGTEXT NOT NULL,
+        password LONGTEXT NOT NULL,
+        email    LONGTEXT NOT NULL
+        
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
+
+    $pdo->exec($sql);
    
 } catch (\PDOException $e) {
     // در صورت بروز خطا، پیام خطا را نمایش می‌دهد

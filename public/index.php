@@ -16,7 +16,8 @@ $rots =
         "signup" => ['controller'=> 'app\C\signup'  , 'method' => 'index'] , 
     ] , 
     'POST' => [
-        'signin' => ['controller'=> 'app\C\sign'  , 'method' => 'c']
+        'signin' => ['controller'=> 'app\C\sign'  , 'method' => 'c'] , 
+        'signup' => ['controller'=> 'app\C\signup'  , 'method' => 'c']
     ]
 ] ;  
 $method = $_SERVER['REQUEST_METHOD'];

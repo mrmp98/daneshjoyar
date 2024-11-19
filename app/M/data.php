@@ -5,8 +5,11 @@ use PDO  ;
 class data 
 {
     
-public function inseret($tableName  , $post , $titel) 
+public function inseret($tableName  , $post , $titel , $r , $t = null  ) 
 {
+    
+    if($r == 2){
+
     
         $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,7 +20,23 @@ public function inseret($tableName  , $post , $titel)
             $stmt->bindParam(':titel', $titel);
             if ($stmt->execute()) {
               
-            } 
+            }
+        return ; 
+        }
+            if($r == 3 ){
+                $conn = new PDO("mysql:host=;dbname=khabary", 'root', '');
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+                    $sql = "INSERT INTO $tableName (user,password , email) VALUES (:user,:password ,:email)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':user', $post);
+                    $stmt->bindParam(':password', $titel);
+                    $stmt->bindParam(':email', $t);
+                    if ($stmt->execute()) {
+                      
+                    }
+                    return   ;    
+            }
         }
        public function delet($tableName , $id)
        {
