@@ -1,3 +1,9 @@
+<?php
+ use app\M\data ; 
+ $r = new data() ; 
+$t= $r->REED(2) ;
+  print_r($t) ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,7 @@
     <link rel="stylesheet" href="wive/index/css/responsive_991.css" media="(max-width:991px)">
     <link rel="stylesheet" href="wive/index/css/responsive_768.css" media="(max-width:768px)">
     <link rel="stylesheet" href="wive/index/css/font.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <div class="sidebar__nav border-top border-left  ">
@@ -73,23 +80,10 @@
         <div class="tab__box">
             <div class="tab__items">
                 <a class="tab__item is-active" href="articles.html">لیست مقالات</a>
-                <a class="tab__item " href="create-article.html">ایجاد مقاله جدید</a>
+            
             </div>
         </div>
-        <div class="bg-white padding-20">
-            <div class="t-header-search">
-                <form action="" onclick="event.preventDefault();">
-                    <div class="t-header-searchbox font-size-13">
-                        <input type="text" class="text search-input__box font-size-13" placeholder="جستجوی مقاله">
-                        <div class="t-header-search-content ">
-                            <input type="text"  class="text"  placeholder="نام مقاله">
-                            <input type="text"  class="text margin-bottom-20" placeholder="نام نویسنده">
-                            <btutton class="btn btn-netcopy_net">جستجو</btutton>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+  
 
         <div class="table__box">
             <table class="table">
@@ -98,47 +92,36 @@
                 <tr role="row" class="title-row">
                     <th>شناسه</th>
                     <th>عنوان</th>
-                    <th>نویسنده</th>
+                 
                     <th>متن</th>
                     <th>تاریخ ایجاد</th>
-                    <th>تعداد بازدید ها</th>
-                    <th>تعداد نظرات</th>
+                  
                     <th>عملیات</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr role="row" class="">
-                    <td><a href="">1</a></td>
-                    <td><a href="">فریم ورک لاراول چیست</a></td>
-                    <td>توفیق حمزئی</td>
-                    <td>فریم ورک لاراول یکی از فریم ورک های محبوب ...</td>
-                    <td>1399/11/11</td>
-                    <td>101</td>
-                    <td>10</td>
-                    <td>
-                        <a href="" class="item-delete mlg-15" title="حذف"></a>
-                        <a href="" class="item-reject mlg-15" title="رد"></a>
-                        <a href="" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                        <a href="" class="item-confirm mlg-15" title="تایید"></a>
-                        <a href="" class="item-edit" title="ویرایش"></a>
-                    </td>
-                </tr>
-                <tr role="row" class="">
-                    <td><a href="">1</a></td>
-                    <td><a href="">فریم ورک لاراول چیست</a></td>
-                    <td>توفیق حمزئی</td>
-                    <td>فریم ورک لاراول یکی از فریم ورک های محبوب ...</td>
-                    <td>1399/11/11</td>
-                    <td>101</td>
-                    <td>10</td>
-                    <td>
-                        <a href="" class="item-delete mlg-15" title="حذف"></a>
-                        <a href="" class="item-reject mlg-15" title="رد"></a>
-                        <a href="" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                        <a href="" class="item-confirm mlg-15" title="تایید"></a>
-                        <a href="" class="item-edit " title="ویرایش"></a>
-                    </td>
-                </tr>
+                <?php
+                for($i=0 ; $i<count($t) ; $i++){ 
+                print_r('<tr role="row" class="">'); 
+                    
+                print_r('<td><a href="">' . $t[$i]['id'] . ' </a></td>') ; 
+                print_r('<td><a href="">' . $t[$i]['titel'] . '</a></td>') ; 
+                
+                 print_r('<td>' . $t[$i]['post'] . '</td>') ; 
+                 
+                print_r('<td> '  . $t[$i]['time'] . '</td>') ; 
+                
+                print_r('<td>') ; 
+                print_r("<form action='' method='post'>") ; 
+        print_r('  <a href="articles/DEL' .$t[$i]['id'] . '" class="bi bi-x-lg mlg-15" title="حذف"></a>');
+        print_r('            <a href="articles/tik' .$t[$i]['id'] . ' " class="bi bi-check-lg mlg-15" title="تایید"></a>');
+        
+        print_r('        </td>');
+        print_r('    </tr>');
+    }
+    print_r('</form>');
+                        ?>
+
 
 
                 </tbody>

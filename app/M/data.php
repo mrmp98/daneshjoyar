@@ -6,17 +6,75 @@ require_once __DIR__ . '/Config.php';
 
 class data 
 {
-    public function inseret($tableName, $post, $titel, $r, $t = null) 
+    public function REED($U = null)
+{
+    if ($U == 3) {
+        try {
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            // اجرای کوئری
+            try {
+                $stmt = $conn->query('SELECT * FROM `post` WHERE stuat = 1');
+                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $users; 
+            } catch (PDOException $e) {
+                echo 'Query failed: ' . $e->getMessage();
+                return [];
+            }
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return [];
+        }
+    }
+    if ($U == 2) {
+        try {
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            // اجرای کوئری
+            try {
+                $stmt = $conn->query('SELECT * FROM `post` WHERE stuat = 0');
+                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $users; 
+            } catch (PDOException $e) {
+                echo 'Query failed: ' . $e->getMessage();
+                return [];
+            }
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return [];
+        }
+    }
+    try {
+        $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
+
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // اجرای کوئری
+        $stmt = $conn->query('SELECT * FROM `user`');
+
+        // ذخیره‌سازی نتایج در یک آرایه
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $users; 
+    } catch (PDOException $e) {
+        echo 'Connection failed: ' . $e->getMessage();
+        return [];
+    }
+}
+    public function inseret($tableName, $post, $titel ,  $r, $t = null , $stuat = null) 
     {
         if ($r == 2) {
             // استفاده از مقادیر تعریف شده به جای نام متغیرها
             $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-            $sql = "INSERT INTO $tableName (post, titel) VALUES (:post, :titel)";
+            $sql = "INSERT INTO $tableName (post, titel , stuat) VALUES (:post, :titel , :stuat)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':post', $post);
             $stmt->bindParam(':titel', $titel);
+            $stmt->bindParam(':stuat', $stuat);
             if ($stmt->execute()) {
                 // موفقیت در اجرای دستور
             }

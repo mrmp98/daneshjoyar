@@ -24,6 +24,8 @@ try {
         id INT(11) AUTO_INCREMENT PRIMARY KEY,
         post LONGTEXT NOT NULL,
         titel LONGTEXT NOT NULL,
+        
+        stuat TEXT NOT NULL,
         time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
 

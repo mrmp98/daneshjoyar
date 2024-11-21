@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
 		<!-- start content -->
 		<div class="central-body">
 			<img class="image-404" src="wive/404/pics/404.png" width="300px">
-			<a href="#" class="btn-go-home" target="_blank">بازگشت</a>
+			<a href="index" class="btn-go-home" target="">بازگشت</a>
 		</div>
 		<div class="objects">
 			<img class="object_rocket" src="wive/404/pics/rocket.svg" width="40px">

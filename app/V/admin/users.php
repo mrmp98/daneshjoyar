@@ -1,3 +1,9 @@
+<?PHP
+use app\M\data ; 
+ $r = new data() ; 
+ $t = $r->REED() ;
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,17 +99,21 @@
                     <th>نام و نام خانوادگی</th>
                     <th>ایمیل</th>
                     <th>سطح کاربری</th>
-                    <th>تاریخ عضویت</th>
+                  
                 </tr>
                 </thead>
                 <tbody>
-                <tr role="row" class="">
-                    <td><a href="">1</a></td>
-                    <td><a href="">نت کپی</a></td>
-                    <td>programming@gmail.com</td>
-                    <td>کاربر عادی</td>
-                    <td>1399/11/11</td>
-                </tr>
+                
+                    <?php for ($i=0; $i < count($t) ; $i++) { 
+                       
+                        print_r("<tr role='row' class=''>") ; 
+                            print_r("<th> " . $t[$i]['id']  .  "</th>" ) ; 
+                            print_r("<th> " . $t[$i]['user']  .  "</th>" ) ; 
+                            print_r("<th> " . $t[$i]['email']  .  "</th>" ) ; 
+                            print_r("<th> عادی</th>" ) ; 
+                            print_r("</tr>") ; 
+                        } ; 
+                       ?>
                 
                 </tbody>
             </table>
