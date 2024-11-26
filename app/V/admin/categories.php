@@ -74,8 +74,8 @@
             <div class="col-12 bg-white">
                   <p class="box__title">ایجاد خبر جدید </p>
                   <form action="" method="post" class="padding-30">
-                      <input type="text" placeholder="titel" class="text" name="titel">
-                      <input type="text" placeholder="متن خبر " class="text" name="khabar">
+                      <input type="text" placeholder="titel" class="text" name="titel" required>
+                      <input type="text" placeholder="متن خبر " class="text" name="khabar" required>
                       
                       <button class="btn btn-netcopy_net">اضافه کردن</button>
                   </form>

@@ -37,6 +37,7 @@ class data
                 $stmt = $conn->query('SELECT * FROM `post` WHERE stuat = 0');
                 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 return $users; 
+                
             } catch (PDOException $e) {
                 echo 'Query failed: ' . $e->getMessage();
                 return [];

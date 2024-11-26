@@ -3,7 +3,6 @@ error_reporting(0) ;
 use app\M\data ; 
 $r  = new data() ; 
 $r->REED(3)  ; 
-print_r($r->REED(3)[$i]) ; 
 
 ?>
 <html>
@@ -102,13 +101,18 @@ print_r($r->REED(3)[$i]) ;
    </button>
 </div >  
 <?php   
-for($i= 0 ; $i<= count($r->REED(3)) ; $i++){
+for($i = 0; $i < count($r->REED(3)); $i++) {
+      if (empty($r->REED(3)[$i]['post'])) {
+       continue; 
+   }
+
    print_r('<div style="background-color: rgb(236, 236, 236); height: 20%; color: rgb(0, 0, 0);">') ; 
-print_r("<h1>" .$r->REED(3)[$i]['titel'] . "</h1>") ; 
-  print_r("<span>" .$r->REED(3)[$i]['post'] . "</span> ") ; 
-  print_r("</div>") ;   
-  echo '<br>' ; 
-} ; 
+   print_r("<h1>" . $r->REED(3)[$i]['titel'] . "</h1>") ; 
+   print_r("<span>" . $r->REED(3)[$i]['post'] . "</span> ") ; 
+   print_r("</div>") ;   
+   echo '<br>' ; 
+}
+
 ?>
       <div class="clear-fix"></div>
       <div class="footer">
