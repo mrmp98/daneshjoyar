@@ -1,7 +1,7 @@
 <?php
  use app\M\data ; 
  $r = new data() ; 
-$t= $r->REED(2) ;
+$t= $r->REED(3) ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +50,7 @@ require_once __DIR__ . '/../datebendi/dastebandi.php' ;
                 </thead>
                 <tbody>
                 <?php
+
                 for($i=0 ; $i<count($t) ; $i++){ 
                 print_r('<tr role="row" class="">'); 
                     
@@ -62,8 +63,7 @@ require_once __DIR__ . '/../datebendi/dastebandi.php' ;
                 
                 print_r('<td>') ; 
                 print_r("<form action='' method='post'>") ; 
-        print_r('  <a href="articles/DEL' .$t[$i]['id'] . '" class="bi bi-x-lg mlg-15" title="حذف"></a>');
-        print_r('            <a href="articles/tik' .$t[$i]['id'] . ' " class="bi bi-check-lg mlg-15" title="تایید"></a>');
+        print_r('  <a href="khabardel/DEL' .$t[$i]['id'] . '" class="bi bi-x-lg mlg-15" title="حذف"></a>');
         
         print_r('        </td>');
         print_r('    </tr>');

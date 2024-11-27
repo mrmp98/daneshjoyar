@@ -2,8 +2,6 @@
 error_reporting(0) ; 
 use app\M\data ; 
 $r  = new data() ; 
-$r->REED(3)  ; 
-
 ?>
 <html>
    <head>
@@ -35,13 +33,7 @@ $r->REED(3)  ;
             <div class="col-md-6">
                <div class="top-cat-box">
                   <div class="col-md-12">
-                     <div class="menu">
-                        <ul>
-                           <li><a href="#">تماس با ما</a></li>
-                           <li><a href="#">درباره ما</a></li>
-                           <li><a href="#">مقالات</a></li>
-                        </ul>
-                     </div>
+                  
                   </div>
                
                </div>
@@ -51,14 +43,7 @@ $r->REED(3)  ;
       <div class="main-header">
          <div class="container-fluid">
             <div class="col-md-10">
-               <div class="main-menu">
-                  <ul>
-                     <li><a href="#">اتاق خبر</a></li>
-                     <li><a href="#">اقتصادی</a></li>
-                     <li><a href="#">انجمن</a></li>
-                     <li><a href="#">گروه رسانه ای</a></li>
-                  </ul>
-               </div>
+               
             </div>
             
          </div>
@@ -94,22 +79,24 @@ $r->REED(3)  ;
    
    <!-- Left and right controls/icons -->
    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-     <span class="carousel-control-prev-icon"></span>
-   </button>
-   <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-     <span class="carousel-control-next-icon"></span>
-   </button>
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
 </div >  
 <?php   
 for($i = 0; $i < count($r->REED(3)); $i++) {
       if (empty($r->REED(3)[$i]['post'])) {
        continue; 
    }
-
    print_r('<div style="background-color: rgb(236, 236, 236); height: 20%; color: rgb(0, 0, 0);">') ; 
+   print_r("<a href=page" . $r->REED(3)[$i]['id'] . ">") ; 
    print_r("<h1>" . $r->REED(3)[$i]['titel'] . "</h1>") ; 
    print_r("<span>" . $r->REED(3)[$i]['post'] . "</span> ") ; 
-   print_r("</div>") ;   
+   print_r('</a>');    
+   print_r("</div>") ;
    echo '<br>' ; 
 }
 

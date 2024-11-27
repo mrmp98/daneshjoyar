@@ -6,8 +6,28 @@ require_once __DIR__ . '/Config.php';
 
 class data 
 {
-    public function REED($U = null)
+    public function REED($U = null , $r=null)
 {
+    if($U== 4)
+    {
+        try {
+            $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            // اجرای کوئری
+            try {
+                $stmt = $conn->query("SELECT * FROM `post` WHERE id  = $r");
+                $users = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $users; 
+            } catch (PDOException $e) {
+                echo 'Query failed: ' . $e->getMessage();
+            
+            }
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            
+        }
+    }
     if ($U == 3) {
         try {
             $conn = new PDO("mysql:host=" . host . ";dbname=" . dbname, usename, password);

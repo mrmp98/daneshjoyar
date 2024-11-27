@@ -22,6 +22,10 @@ $rots =
         'articles/DEL' => ['controller'=> 'app\C\admin'  , 'method' => 'del'] , 
         'articles/tik?[0-9]+' => ['controller'=> 'app\C\admin'  , 'method' => 'tik'] , 
         'articles/DEL?[0-9]+' => ['controller'=> 'app\C\admin'  , 'method' => 'del'] , 
+        'khabar' => ['controller'=> 'app\C\admin'  , 'method' => 'khabar'] , 
+        'khabardel/DEL?[0-9]+' => ['controller'=> 'app\C\admin'  , 'method' => 'khabardel'] , 
+        "page?[0-9]+" => ['controller'=> 'app\C\page'  , 'method' => 'index'] , 
+
     ] , 
     'POST' => [
         'signin' => ['controller'=> 'app\C\sign'  , 'method' => 'c'] , 

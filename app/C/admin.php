@@ -37,4 +37,14 @@ class admin
 
         
     }
+    public function khabar()
+    {
+        require_once __DIR__ . '/../V/admin/khabar.php' ; 
+    }
+    public function khabardel()
+    {
+        $r = new data() ;  
+        $r->delet('post' , substr($_GET['url'] , 13)) ; 
+        header('location: /mame/daneshjoyar/khabar') ; 
+    }
 }
