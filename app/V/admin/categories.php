@@ -1,3 +1,6 @@
+<?php 
+session_start() ; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,12 @@
 <body>
 <div class="content">
     <?php
+    if($_SESSION['USER']== 'admin'){
 require_once __DIR__ . '/../datebendi/dastebandi.php' ;
+}
+else{
+    require_once __DIR__ . '/../datebendi/dastebandiuser.php' ; 
+}
 ?>
     <div class="main-content padding-0 categories">
         <div class="row no-gutters  ">

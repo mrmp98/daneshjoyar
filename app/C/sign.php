@@ -1,6 +1,6 @@
 <?php
-
 namespace App\C;
+session_start() ; 
 
 use app\M\data;
 
@@ -15,7 +15,7 @@ class Sign
         $name =  htmlspecialchars($_POST['name']);
         $pass =   htmlspecialchars($_POST['password']);
         $r  = new data();
-      
-      echo ($r->serech('user', 'user', $name) && $r->serech('user', 'password', $pass)) ? header('location: /mame/daneshjoyar/categories'):  header('location: mame/daneshjoyar/signup    ');
+        $_SESSION['USER'] = $name ;
+      echo ($r->serech('user', 'user', $name) && $r->serech('user', 'password', $pass)) ? header('location: /mame/daneshjoyar/categories'):  header('location: mame/daneshjoyar/signup');
     }
 }

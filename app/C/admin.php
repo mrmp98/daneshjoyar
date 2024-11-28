@@ -12,11 +12,13 @@ class admin
     }
     public function categoriescontroler()
     {
+        session_start() ;                   
         $r = new data() ; 
         $titel =  htmlentities($_POST['titel']) ; 
         $khabar = htmlentities($_POST['khabar']) ;
         $r->inseret('post' , $khabar  , $titel , '2' , '' , 0) ; 
-        header('location: articles') ; 
+        echo  ($_SESSION['USER'] == 'admin') ?    header('location: articles'):header('location: index');
+      
     }
     public function users(){
         require __DIR__ . '/../V/admin/users.php';
