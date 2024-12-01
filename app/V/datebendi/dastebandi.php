@@ -5,6 +5,7 @@
         <li class="item-li i-users"><a href="users"> کاربران</a></li>
         <li class="item-li i-articles"><a href="articles">تایید مقالات </a></li>
         <li class="item-li i-articles"><a href="khabar">خود خبر  </a></li>
+        <li class="item-li i-articles"><a href="index">خروج </a></li>
     </ul>
 
 
