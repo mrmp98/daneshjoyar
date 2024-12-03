@@ -15,6 +15,23 @@ $t= $r->REED(2) ;
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+<style>
+    #a {
+            font-size: small;
+            width: 100%; /* تغییر عرض به 100% */
+            max-width: 800px; /* حداکثر عرض برای جلوگیری از بزرگ شدن بیش از حد */
+            max-height: 300px; /* حداکثر ارتفاع برای جلوگیری از بزرگ شدن بیش از حد */
+            text-align: center;
+            word-wrap: break-word; /* متن طولانی را به خط بعدی می‌آورد */
+            overflow-wrap: break-word; /* متن طولانی را به خط بعدی می‌آورد */
+            background-color: rgb(236, 236, 236);
+            padding: 15px; /* کمی فاصله داخلی برای زیبایی */
+            margin: 0 auto; /* مرکز کردن باکس */
+            overflow: hidden; /* پنهان کردن متن اضافی */
+            white-space: normal; /* اجازه به متن برای شکستن به خطوط جدید */
+            line-height: 1.5; /* تنظیم فاصله بین خطوط */
+        }
+</style>
 <body>
 <?php 
 require_once __DIR__ . '/../datebendi/dastebandi.php' ; 
@@ -55,11 +72,11 @@ require_once __DIR__ . '/../datebendi/dastebandi.php' ;
                 print_r('<tr role="row" class="">'); 
                     
                 print_r('<td><a href="">' . $t[$i]['id'] . ' </a></td>') ; 
-                print_r('<td><a href="">' . $t[$i]['titel'] . '</a></td>') ; 
+                print_r('<td id="a"><a href="">' . $t[$i]['titel'] . '</a></td>') ; 
                 
-                 print_r('<td>' . $t[$i]['post'] . '</td>') ; 
+                 print_r('<td id="a">' . $t[$i]['post'] . '</td>') ; 
                  
-                print_r('<td> '  . $t[$i]['time'] . '</td>') ; 
+                print_r('<td id="a"> '  . $t[$i]['time'] . '</td>') ; 
                 
                 print_r('<td>') ; 
                 print_r("<form action='' method='post'>") ; 

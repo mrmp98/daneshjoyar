@@ -26,12 +26,13 @@ $r  = new data();
    }
 
 
-   #j,
-   #page,
+   
+   
    #opqwe {
       font-size: large;
       width: 50%;
       height: 20%;
+      text-align: center;
       word-wrap: break-word;
       /* متن طولانی را به خط بعدی می‌آورد */
       overflow-wrap: break-word;
@@ -119,7 +120,6 @@ $r  = new data();
       echo '<div id="j">';
       echo '<a href="page' . $r->REED(3)[$i]['id'] . '">';
       echo '<h1 id="opqwe">' . $r->REED(3)[$i]['titel'] . '</h1>';
-      echo '<span id="opqwe">' . $r->REED(3)[$i]['post'] . '</span>';
       echo '</a>';
       echo '</div>';
       echo '<br>';
