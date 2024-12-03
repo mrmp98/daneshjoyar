@@ -1,11 +1,11 @@
 
 <div class="sidebar__nav border-top border-left  ">
     <ul>
-        <li class="item-li i-categories"><a href="categories">ایجاد خبر جدید </a></li>
-        <li class="item-li i-users"><a href="users"> کاربران</a></li>
-        <li class="item-li i-articles"><a href="articles">تایید مقالات </a></li>
-        <li class="item-li i-articles"><a href="khabar">خود خبر  </a></li>
-        <li class="item-li i-articles"><a href="index">خروج </a></li>
+        <li class=""><a href="categories" class="bi bi-eyedropper">ایجاد خبر جدید </a></li>
+        <li class=""><a href="users" class="bi bi-person-circle"> کاربران</a></li>
+        <li class=""><a href="articles" class="bi bi-check2">تایید مقالات </a></li>
+        <li class=""><a href="khabar" class="bi bi-eye-fill">خود خبر  </a></li>
+        <li class=""><a href="index" class=" bi bi-door-open-fill">خروج </a></li>
     </ul>
 
 

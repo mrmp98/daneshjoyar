@@ -341,7 +341,17 @@ body, html {
 body {
     background: #eaecef;
     color: #636e72;
+    
 }
+
+
+#opqwe{
+        border: 1px solid #000; /* مرز برای نمایش */
+    word-wrap: break-word; /* متن طولانی را به خط بعدی می‌آورد */
+    overflow-wrap: break-word;
+    
+}
+
 
 .color-636e72 {
     color: #636e72;

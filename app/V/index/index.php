@@ -24,16 +24,31 @@ $r  = new data();
       background-color: black;
       color: aliceblue;
    }
+
+
+   #j,
+   #page,
+   #opqwe {
+      font-size: large;
+      width: 50%;
+      height: 20%;
+      word-wrap: break-word;
+      /* متن طولانی را به خط بعدی می‌آورد */
+      overflow-wrap: break-word;
+      background-color: rgb(236, 236, 236);
+      
+   }
 </style>
+
 
 <body>
    <div class="top-bar">
-   <div style="display: flex;justify-content: center; align-items:center;">
+      <div style="display: flex;justify-content: center; align-items:center;">
 
-      <a href="signin">
-         <div style="width: 50; height: 50; background-color: bisque; border-radius: 50%;"><i style="font-size: 50; color: black;" class="bi bi-person"></i></div>
-      </a>
-   </div>   
+         <a href="signin">
+            <div style="width: 50; height: 50; background-color: bisque; border-radius: 50%;"><i style="font-size: 50; color: black;" class="bi bi-person"></i></div>
+         </a>
+      </div>
       <div class="container-fluid">
          <div class="col-md-6">
 
@@ -101,12 +116,12 @@ $r  = new data();
       if (empty($r->REED(3)[$i]['post'])) {
          continue;
       }
-      print_r('<div style="background-color: rgb(236, 236, 236); height: 20%; color: rgb(0, 0, 0);">');
-      print_r("<a href=page" . $r->REED(3)[$i]['id'] . ">");
-      print_r("<h1>" . $r->REED(3)[$i]['titel'] . "</h1>");
-      print_r("<span>" . $r->REED(3)[$i]['post'] . "</span> ");
-      print_r('</a>');
-      print_r("</div>");
+      echo '<div id="j">';
+      echo '<a href="page' . $r->REED(3)[$i]['id'] . '">';
+      echo '<h1 id="opqwe">' . $r->REED(3)[$i]['titel'] . '</h1>';
+      echo '<span id="opqwe">' . $r->REED(3)[$i]['post'] . '</span>';
+      echo '</a>';
+      echo '</div>';
       echo '<br>';
    }
 
@@ -118,11 +133,11 @@ $r  = new data();
             <div class="footer-box">
                <span class="title">مجله seo90</span>
                <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est voluptate nihil hic nulla, voluptatem repudiandae quam eius delectus neque minus earum omnis, quas ullam porro aperiam veritatis ut exercitationem?      
-            </p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est voluptate nihil hic nulla, voluptatem repudiandae quam eius delectus neque minus earum omnis, quas ullam porro aperiam veritatis ut exercitationem?
+               </p>
             </div>
          </div>
-       
+
          <div class="col-md-3">
             <div class="footer-box contact-box">
                <span class="title">تماس با ما</span>

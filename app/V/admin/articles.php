@@ -13,6 +13,7 @@ $t= $r->REED(2) ;
     <link rel="stylesheet" href="wive/index/css/responsive_768.css" media="(max-width:768px)">
     <link rel="stylesheet" href="wive/index/css/font.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <?php 
