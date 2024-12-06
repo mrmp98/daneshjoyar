@@ -1,5 +1,5 @@
 <?php 
-define("dbname", 'khabary'); 
-define('usename', 'root'); 
-define('password', ''); 
+define("dbname", 'mrqwfr_abc'); 
+define('usename', 'mrqwfr_abc'); 
+define('password', 'abcdefg'); 
 define('host', 'localhost'); 

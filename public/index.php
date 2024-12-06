@@ -3,9 +3,9 @@ require __DIR__ . '/../botstrap.php' ;
 $not = 0 ;
 
 // for develop localhost
-$path = trim(str_replace("/mame/daneshjoyar", "", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)), "/");
+// $path = trim(str_replace("/mame/daneshjoyar", "", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)), "/");
 // for deploy
-// $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) , "/");
+$path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) , "/");
 
 $rots = 
 [
